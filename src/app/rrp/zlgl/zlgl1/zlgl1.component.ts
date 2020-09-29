@@ -35,7 +35,7 @@ export class Zlgl1Component implements OnInit {
    id;
    robot: Robot;
    robots: Robot[];
-  // 查找到的机器人的所属公司
+  // 查找到的设备的所属公司
   company: Company;
   company1: Company;
   companys1: Company[];
@@ -100,7 +100,7 @@ export class Zlgl1Component implements OnInit {
       });
   }
   getRobotsByBelongingComapnyId(data): void {
-    console.log(data);
+
     this.qyglService.getRobotByBelongingCompanyId(data.id)
       .subscribe((res: any) => {
         this.robots = res.data;
@@ -158,7 +158,7 @@ export class Zlgl1Component implements OnInit {
     this.isVisible = true;
   }
   add(): void {
-    console.log(this.robots);
+    //console.log(this.robots);
     this.isVisible1 = false;
     this.add1 = false;
     this.add2 = false;
@@ -210,10 +210,10 @@ export class Zlgl1Component implements OnInit {
     window.location.reload();
   }
   remind(data) {
-    console.log(data);
+
     this.modalService.confirm({
       nzTitle: null,
-      nzContent: '<b style="color: red;">您确定要对该布料机器人发送缴费提醒吗？</b>',
+      nzContent: '<b style="color: red;">您确定要对该设备发送缴费提醒吗？</b>',
       nzOkText: '确定',
       nzOnOk: () => this.remindOk(data),
       nzCancelText: '取消',
@@ -223,7 +223,7 @@ export class Zlgl1Component implements OnInit {
   cancleremind(data) {
     this.modalService.confirm({
       nzTitle: null,
-      nzContent: '<b style="color: red;">您确定要对该布料机器人取消提醒吗？</b>',
+      nzContent: '<b style="color: red;">您确定要对该设备取消提醒吗？</b>',
       nzOkText: '确定',
       nzOnOk: () => this.remindCancle(data),
       nzCancelText: '取消',
@@ -241,12 +241,12 @@ export class Zlgl1Component implements OnInit {
     });
   }
   showModalVisible(data, state) {
-    console.log(data);
+
     // 启用
     if (state === 1) {
       this.modalService.confirm({
         nzTitle: null,
-        nzContent: '<b style="color: red;">您确定要启用该布料机器人吗？</b>',
+        nzContent: '<b style="color: red;">您确定要启用该设备吗？</b>',
         nzOkText: '确定',
         nzOnOk: () => this.zlgl1Service.start(data).then((res: any) => {
           if (res.state === 200) {
@@ -262,7 +262,7 @@ export class Zlgl1Component implements OnInit {
     if (state === 2) {
       this.modalService.confirm({
         nzTitle: null,
-        nzContent: '<b style="color: red;">您确定要停用该布料机器人吗？</b>',
+        nzContent: '<b style="color: red;">您确定要停用该设备吗？</b>',
         nzOkText: '确定',
         nzOnOk: () => this.zlgl1Service.stop(data).then((res: any) => {
           if (res.state === 200) {
@@ -282,7 +282,6 @@ export class Zlgl1Component implements OnInit {
   }
 
   onquery(data) {
-    console.log(data);
     this.query(data);
   }
   query(data) {
@@ -321,7 +320,7 @@ export class Zlgl1Component implements OnInit {
     pay.paymentTime =  formatDate(new Date().getTime(), 'yyyy-MM-dd', 'zh-Hans');
     pay.paymentDeadline = this.pay.date;
     pay.paymentAmount =  parseInt(this.pay.money);
-    console.log(pay);
+    //console.log(pay);
     this.zlgl1Service.pay(pay).then((res: any) => {
       if (res.state === 200) {
         this.message.success('已发出审批请求，等待客服经理审批！');

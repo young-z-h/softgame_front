@@ -39,7 +39,7 @@ export class JfglComponent implements OnInit {
    robots: Robot[] =[];
   // 所有公司
    companys: Company[];
-  // 拥有机器人的公司
+  // 拥有设备的公司
    companys1: Company[];
    pays: Pay[];
   pay: Pay;
@@ -118,7 +118,7 @@ export class JfglComponent implements OnInit {
       });
   }
   showModa2(data: Pay): void {
-    console.log(data);
+
     this.pay = data;
     this.isVisible2 = true;
     this.id = data.id;
@@ -139,7 +139,7 @@ export class JfglComponent implements OnInit {
     this.add1 = true;
   }
   showModal(data: Pay): void {
-    console.log(data)
+    //console.log(data)
     if (!this.leases || this.leases.indexOf(data.lease) ==-1){
       this.leases.push(data.lease)
     }
@@ -241,7 +241,7 @@ export class JfglComponent implements OnInit {
       belongingCompanyid: this.belongcompany.id===undefined?'':this.belongcompany.id,
       robotid: this.robot.id===undefined?'':this.robot.id,
     }
-    console.log(jsondata);
+    //console.log(jsondata);
     this.jfglService.findLeaseByRobotAndCompany(jsondata).then((res:any)=>{
       if(res.state ===200){
         this.leases = res.data;

@@ -33,7 +33,7 @@ export class SpglComponent implements OnInit {
     this.query(data);
   }
   query(data){
-    console.log(data);
+
     if (data ===this.jsondata){
         this.spglService.query(this.jsondata).then((res:any)=>{
           if(res.state===200){

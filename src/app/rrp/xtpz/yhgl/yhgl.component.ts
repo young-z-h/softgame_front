@@ -70,7 +70,7 @@ export class YhglComponent implements OnInit {
       });
     } else {
       // data为查询组件所选值
-      console.log(data);
+
       // 初始化 传参jsondata
       this.jsondata = {
         province: '',
@@ -108,7 +108,7 @@ export class YhglComponent implements OnInit {
     //   });
 
     // @ts-ignore
-    // if (this.users[0] != null) {this.users = this.users[0]; console.log(this.users[0]); }
+    // if (this.users[0] != null) {this.users = this.users[0]; //console.log(this.users[0]); }
     // this.getInfo();
     const queryDate = {
       companyid: JSON.parse(localStorage.getItem('userinfo')).company.id
@@ -214,7 +214,7 @@ export class YhglComponent implements OnInit {
     this.yhglService.resetPassword(id)
       .subscribe((res: any) => {
         if (res.state === 200) {  this.message.success(res.msg + ',密码重置为123456'); } else { this.message.error(res.msg); }
-        console.log(id);
+        //console.log(id);
       });
   }
 
@@ -222,7 +222,7 @@ export class YhglComponent implements OnInit {
   //   this.yhglService.getUser(id)
   //     .subscribe((res: any) => {
   //       this.role = res.data;
-  //       // console.log(res.data);
+  //       // //console.log(res.data);
   //     });
   // }
 

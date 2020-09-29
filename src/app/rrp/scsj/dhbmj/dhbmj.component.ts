@@ -79,7 +79,7 @@ export class DhbmjComponent implements OnInit {
               color: '#b1b1b1'
             },
           },
-           xAxis: {
+          xAxis: {
             categories: time,
             crosshair: true
           },

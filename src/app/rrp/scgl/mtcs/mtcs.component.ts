@@ -71,7 +71,7 @@ export class MtcsComponent implements OnInit {
     this.benchDataService.getByBenchMax(item)
       .subscribe((res: any) => {
         if (res.data !== null) {
-          // console.log(this.adds);
+          // //console.log(this.adds);
           // tslint:disable-next-line:prefer-for-of
           for (let i = 0; i < this.adds.length; i++) {
             // alert(this.adds[i].id === res.data.id);
@@ -89,7 +89,7 @@ export class MtcsComponent implements OnInit {
 
   add() {
     this.isVisible1 = false;
-    // console.log(this.adds);
+    // //console.log(this.adds);
     if (this.adds !== null) {
       // tslint:disable-next-line:prefer-for-of
       for (let i = 0; i < this.adds.length; i++) {
@@ -165,7 +165,6 @@ export class MtcsComponent implements OnInit {
       });
     } else {
       // data为查询组件所选值
-      console.log(data);
       // 初始化 传参jsondata
       this.jsondata = {
         province: '',
@@ -238,7 +237,7 @@ export class MtcsComponent implements OnInit {
       if (check) {
         this.produces.push(item);
       }
-      console.log(this.produces);
+      //console.log(this.produces);
     }
   }
 

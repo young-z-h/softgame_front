@@ -27,7 +27,7 @@
         </nz-select>
 
         <nz-select nzSize="small" *ngIf="robotVisible" [(ngModel)]="selectedRobot" (ngModelChange)="RobotChange($event)"
-                   [nzAllowClear]="true"  [nzShowSearch]="true"  nzPlaceHolder="请选择机器人">
+                   [nzAllowClear]="true"  [nzShowSearch]="true"  nzPlaceHolder="请选择设备">
           <nz-option *ngFor="let p of RobotData" [nzValue]="p" [nzLabel]="p.name"></nz-option>
         </nz-select>
         <nz-date-picker class="date"*ngIf="dateVisible" [(ngModel)]="startdate"  nzSize="small" nzPlaceHolder="开始日期"></nz-date-picker>

@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'qygl', component: QyglComponent, data: { title: '企业管理' },
   },
   {
-    path: 'bljqrgl', component: BljqrglComponent, data: { title: '布料机器人管理' },
+    path: 'bljqrgl', component: BljqrglComponent, data: { title: '设备管理' },
   }
   /***************挂自己功能组件 */
 ];

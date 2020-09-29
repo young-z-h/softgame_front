@@ -4,8 +4,8 @@
     <thead>
     <tr>
       <th>序号</th>
-      <th>机器人编号</th>
-      <th>机器人名称</th>
+      <th>设备编号</th>
+      <th>设备名称</th>
       <th>操作</th>
 
     </tr>
@@ -27,7 +27,7 @@
                      (nzOnCancel)="handleCancel()" (nzOnOk)="update()">
   <div>
     <div style="float: left;  margin-right: 50px">
-      <h2>布料机接料位置</h2>
+      <h2>机接料位置</h2>
       <label>单位（毫米）</label><br>
       <label>X位置</label><input [(ngModel)]="this.robotData.concretrreceive_coordinate_x"/><br>
       <label>Y位置</label><input [(ngModel)]="this.robotData.concretrreceive_coordinate_y"/><br>
@@ -39,7 +39,7 @@
 
   <div>
     <div style="float: left;  margin-right: 50px">
-      <h2>布料机软限位</h2>
+      <h2>机软限位</h2>
       <label>X最小</label><input [(ngModel)]="this.robotData.mincoordinate_x"/><br>
       <label>Y最小</label><input [(ngModel)]="this.robotData.mincoordinate_y"/><br>
       <label>Z最小</label><input [(ngModel)]="this.robotData.mincoordinate_z"/><br>
@@ -52,7 +52,7 @@
   </div>
   <div>
     <div style="float: left;  margin-right: 50px">
-      <h2>布料机零点设置</h2>
+      <h2>机零点设置</h2>
       <label>单位（毫米）</label><br>
       <label>X位置</label><input [(ngModel)]="this.robotData.encodervalue_zero_X"/><br>
       <label>Y位置</label><input [(ngModel)]="this.robotData.encodervalue_zero_Y"/><br>
@@ -63,7 +63,7 @@
   </div>
   <div>
     <div>
-      <h2>布料机速度设置</h2>
+      <h2>机速度设置</h2>
       <label>下料速度</label><input [(ngModel)]="this.robotData.speed_default"/><br>
       <label>自动行走速度</label><input [(ngModel)]="this.robotData.target_work_port_v"/><br>
       <label>手动行走速度</label><input [(ngModel)]="this.robotData.move_speed"/><br>
@@ -85,7 +85,7 @@
 
     <div>
       <div style="float: left;  margin-right: 10px">
-        <h2>布料机最大速度</h2>
+        <h2>机最大速度</h2>
         <label>X方向最大速度</label><br><input [(ngModel)]="this.robotData.maxv_x"/><br>
         <label>Y方向最大速度</label><br><input [(ngModel)]="this.robotData.maxv_y"/><br>
         <label>Z方向最大速度</label><br><input [(ngModel)]="this.robotData.maxv_z"/><br>
@@ -125,7 +125,7 @@
     </div>
     <div>
       <div style="float: left;  margin-right: 50px">
-        <h2>布料机润滑</h2>
+        <h2>机润滑</h2>
         <label>润滑时间</label><input [(ngModel)]="this.robotData.time_lubrication"/><br>
         <label>间隔时间</label><input [(ngModel)]="this.robotData.Intervals_lubrication"/><br>
         <button nz-button [nzType]="'primary'" (click)="update()">确定</button>

@@ -39,7 +39,7 @@ export class QuerylistService {
         reject(error);
       })));
   }
-// 根据企业id获取机器人
+// 根据企业id获取设备
   getRobot(id) {
     const url = this.url.hostname + '/robot/findAllByCompany?id=';
     return new Promise(((resolve, reject) =>
@@ -50,7 +50,7 @@ export class QuerylistService {
         reject(error);
       })));
   }
-  //根据企业id获取机器人
+  //根据企业id获取设备
   getRobotByCompany(id1,id2) {
     const url = this.url.hostname + 'findByComapny';
     const body ={
@@ -66,7 +66,7 @@ export class QuerylistService {
       })));
   }
 
-  // 查询被该企业使用的机器人
+  // 查询被该企业使用的设备
   getRobotByCompanyid(id) {
     const url = this.url.hostname + '/robot/findAllByCompanyid?id=';
     return new Promise(((resolve, reject) =>
@@ -77,7 +77,7 @@ export class QuerylistService {
         reject(error);
       })));
   }
-  // 查找租用自己机器人的企业
+  // 查找租用自己设备的企业
   getCompanyByRobot(id) {
     const url = this.url.hostname + '/company/findCompanyByRobot?id=';
     return new Promise(((resolve, reject) =>

@@ -6,7 +6,7 @@
   <thead>
   <tr>
     <th>序号</th>
-    <th>机器人名称</th>
+    <th>设备名称</th>
     <th>唯一标识</th>
     <th>租用企业</th>
     <th>合同编号</th>
@@ -48,7 +48,7 @@
     <form nz-form *ngIf="isVisible2">
       <div nz-row>
         <nz-form-item>
-          <nz-form-label [nzSpan]="6">机器人</nz-form-label>
+          <nz-form-label [nzSpan]="6">设备</nz-form-label>
           <nz-form-control>
             <input [disabled]="true" nz-input name="robotname" [(ngModel)]="robot.name" />
           </nz-form-control>
@@ -124,7 +124,7 @@
   <form nz-form *ngIf="isVisible">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人所属公司</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备所属公司</nz-form-label>
         <nz-form-control>
           <nz-select name="company1" [(ngModel)]="belongcompany" (ngModelChange)="getRobotsByBelongingComapnyId($event)"  [nzAllowClear]="true"  [nzShowSearch]="true" >
             <nz-option *ngFor="let obj of companys1" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>
@@ -134,7 +134,7 @@
     </div>
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备</nz-form-label>
         <nz-form-control>
           <nz-select name="company1" [(ngModel)]="robot" (ngModelChange)="robotChange($event)"  [nzAllowClear]="true"  [nzShowSearch]="true" >
             <nz-option *ngFor="let obj of robots" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>
@@ -194,7 +194,7 @@
   <form  nz-form *ngIf="add1">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人所属公司</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备所属公司</nz-form-label>
         <nz-form-control>
           <nz-select name="company1" [(ngModel)]="belongcompany" (ngModelChange)="getRobotsByBelongingComapnyId($event)"  [nzAllowClear]="true"  [nzShowSearch]="true" >
             <nz-option *ngFor="let obj of companys1" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>
@@ -204,7 +204,7 @@
     </div>
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备</nz-form-label>
         <nz-form-control>
           <nz-select name="robot" [(ngModel)]="robot"   [nzAllowClear]="true"  [nzShowSearch]="true" (ngModelChange)="robotChange($event)">
             <nz-option *ngFor="let obj of robots" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>

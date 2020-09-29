@@ -89,20 +89,20 @@ export class JsglComponent implements OnInit {
       // if (!this.menuOperations.includes(eachMenuOperation))
       this.menuOperations.push(eachMenuOperation);
     } else {
-      console.log(this.menuOperations.includes(eachMenuOperation));
+      //console.log(this.menuOperations.includes(eachMenuOperation));
       // tslint:disable-next-line:max-line-length
       this.menuOperations = this.menuOperations.filter(item => !(item.eMenu === eachMenuOperation.eMenu && item.eOperation === eachMenuOperation.eOperation));
       // 删除toAddRolesMenu数组中国呢的指定元素
       this.toAddRolesMenus = this.toAddRolesMenus.filter(item => item !== menu);
     }
-    // console.log(this.toAddRolesMenus);
-    // console.log(this.menuOperations);
+    // //console.log(this.toAddRolesMenus);
+    // //console.log(this.menuOperations);
   }
 
   add(description: any): void {
     this.authorityArray = [];
     // this.getRolesMaxId();
-    console.log(this.roles);
+    //console.log(this.roles);
     let maxId = 0;
     // tslint:disable-next-line:only-arrow-functions
     this.getRoles();
@@ -115,7 +115,7 @@ export class JsglComponent implements OnInit {
 
     this.toAddRole = { id: ++maxId, description: description.value, menus: this.toAddRolesMenus };
 
-    console.log(this.toAddRole);
+    //console.log(this.toAddRole);
 
     for (const sliced of this.menuOperations) {
       this.authorityArray.push({role: maxId, menu: Number(sliced['eMenu']), operation: Number(sliced['eOperation'])});
@@ -128,12 +128,12 @@ export class JsglComponent implements OnInit {
       if (res.state === 200) { this.message.success(res.msg); } else { this.message.error(res.msg); }
     });
 
-    console.log(completedAuthority);
+    //console.log(completedAuthority);
   }
 
   showModal(): void {
     this.isVisible = true;
-    // console.log(this.operations);
+    // //console.log(this.operations);
     // this.getUser(1);
   }
 
@@ -147,7 +147,7 @@ export class JsglComponent implements OnInit {
       .subscribe((res: any) => {
         this.getRoles();
         if (res.state === 200) { this.message.success(res.msg); } else { this.message.error(res.msg); }
-        console.log(id);
+        //console.log(id);
       });
   }
 
@@ -175,7 +175,7 @@ export class JsglComponent implements OnInit {
     this.jsglService.getMenus()
       .subscribe((res: any) => {
         this.menus = res.data;
-        console.log(this.menus);
+        //console.log(this.menus);
       });
   }
 
@@ -198,12 +198,12 @@ export class JsglComponent implements OnInit {
   }
 
   getInfo(data: any, data2: any, data3: any): void {
-    console.log(data);
-    console.log(data2);
-    console.log(data3);
-    console.log(this.menus);
-    console.log(this.roles);
-    // console.log(this.operations);
+
+    //console.log(data2);
+    //console.log(data3);
+    //console.log(this.menus);
+    //console.log(this.roles);
+    // //console.log(this.operations);
   }
 
   showDeleteModal(): void {
@@ -219,12 +219,12 @@ export class JsglComponent implements OnInit {
 
     this.role = role;
 
-    console.log(this.role);
+    //console.log(this.role);
 
     this.jsglService.findAuthorityByRoleId(this.role.id)
       .subscribe((res: any) => {
         this.checkDic = {};
-        console.log(res.data);
+        //console.log(res.data);
         this.updateRoleMenuOperation = res.data;
         // 最好使用filter，最后改
         for (const sliceMenu of this.menus) {
@@ -240,12 +240,12 @@ export class JsglComponent implements OnInit {
             this.checkDic[sliceMenu['id'] + '$' + sliceOperation['id']] = result;
           }
         }
-        console.log(this.checkDic);
+        //console.log(this.checkDic);
       });
     // this.getUser(1);
   }
   show() {
-    console.log(this.checkDic);
+    //console.log(this.checkDic);
   }
   update(): void {
     // this.getRolesMaxId();
@@ -264,7 +264,7 @@ export class JsglComponent implements OnInit {
     const toUpdateRole =  {
       id: this.role.id, description: this.role.description, menus: toUpdateRoleMenus
     };
-    console.log(toUpdateRole);
+    //console.log(toUpdateRole);
     const toUpdateMenuOperations = [];
     for (const key in this.checkDic) {
       if (this.checkDic[key]) {
@@ -281,9 +281,9 @@ export class JsglComponent implements OnInit {
       this.getRoles();
       if (res.state === 200) { this.message.success(res.msg); } else { this.message.error(res.msg); }
     });
-    // console.log(toUpdateRoleMenus);
-    // console.log(toUpdateMenuOperations);
-    // console.log(completedAuthority);
+    // //console.log(toUpdateRoleMenus);
+    // //console.log(toUpdateMenuOperations);
+    // //console.log(completedAuthority);
     // this.getMenus();
     // this.getAllDynamicMenus();
     this.updateVisible = false;

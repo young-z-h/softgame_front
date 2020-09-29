@@ -6,7 +6,7 @@
     <thead>
     <tr>
       <th>序号</th>
-      <th>机器人名称</th>
+      <th>设备名称</th>
       <th>唯一标识</th>
       <th>租用企业</th>
       <th>合同编号</th>
@@ -53,7 +53,7 @@
   <form nz-form *ngIf="add1">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人所属公司</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备所属公司</nz-form-label>
         <nz-form-control>
           <nz-select name="company" [(ngModel)]="company" (ngModelChange)="getRobotsByBelongingComapnyId($event)">
             <nz-option *ngFor="let obj of companys" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>
@@ -63,7 +63,7 @@
     </div>
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">选择机器人</nz-form-label>
+        <nz-form-label [nzSpan]="6">选择设备</nz-form-label>
         <nz-form-control>
           <nz-select name="robot" [(ngModel)]="robot">
             <nz-option *ngFor="let obj of robots" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>
@@ -149,7 +149,7 @@
     <form  nz-form *ngIf="isVisible2">
       <div nz-row>
         <nz-form-item>
-          <nz-form-label [nzSpan]="6">机器人所属企业</nz-form-label>
+          <nz-form-label [nzSpan]="6">设备所属企业</nz-form-label>
           <nz-form-control>
             <input [disabled]="true" nz-input name="company" [(ngModel)]="lease.robot.belongingCompany.name" />
           </nz-form-control>
@@ -157,7 +157,7 @@
       </div>
       <div nz-row>
         <nz-form-item>
-          <nz-form-label [nzSpan]="6">选择机器人</nz-form-label>
+          <nz-form-label [nzSpan]="6">选择设备</nz-form-label>
           <nz-form-control>
             <input [disabled]="true" nz-input name="robot" [(ngModel)]="lease.robot.name" />
           </nz-form-control>
@@ -290,7 +290,7 @@
   <form nz-form *ngIf="isVisible3">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人名称</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备名称</nz-form-label>
         <nz-form-control>
           <input  nz-input name="robotname" [(ngModel)]="lease.robot.name" />
         </nz-form-control>

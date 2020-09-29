@@ -1,7 +1,7 @@
 <app-querylist (onQuery)="onquery($event)" [robotManagement]="true"></app-querylist>
 <div *ngIf="operation.indexOf(4)!=-1">
 <button *ngIf="operation.indexOf(1)!=-1" class="topbutton" (click)="showModal1()"><span>+ 增加</span></button>
-<nz-modal [(nzVisible)]="isVisible1" nzTitle="增加机器人" (nzOnCancel)="handleCancel1()" (nzOnOk)="add()">
+<nz-modal [(nzVisible)]="isVisible1" nzTitle="增加设备" (nzOnCancel)="handleCancel1()" (nzOnOk)="add()">
   <label>机器名称:&nbsp;</label> <input nz-input  [(ngModel)]="name" />
   <label>唯一标识:&nbsp;</label> <input nz-input  [(ngModel)]="id" />
   <label>归属企业:&nbsp;</label>
@@ -22,7 +22,7 @@
   <thead>
   <tr>
     <th>序号</th>
-    <th>机器人名称</th>
+    <th>设备名称</th>
     <th>唯一标识</th>
     <th>归属企业</th>
     <th>使用方式</th>
@@ -50,7 +50,7 @@
   </tr>
 
 
-  <nz-modal [(nzVisible)]="isVisible" nzTitle="修改机器人信息" (nzOnCancel)="handleCancel()" (nzOnOk)="update()">
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="修改设备信息" (nzOnCancel)="handleCancel()" (nzOnOk)="update()">
     <label>机器名称:&nbsp;</label> <input nz-input *ngIf="robot" [(ngModel)]="robot.name"/>
     <label>归属企业:&nbsp;</label>
     <div>
@@ -67,12 +67,12 @@
   </nz-modal>
 
 
-  <nz-modal [(nzVisible)]="isVisible2" nzTitle="机器人租赁" (nzOnCancel)="handleCancel2()" (nzOnOk)="zulin()"
+  <nz-modal [(nzVisible)]="isVisible2" nzTitle="设备租赁" (nzOnCancel)="handleCancel2()" (nzOnOk)="zulin()"
             [nzFooter]="modalFooter" >
     <form nz-form *ngIf="add1" id="form1">
       <div nz-row>
         <nz-form-item>
-          <nz-form-label [nzSpan]="6">机器人所属公司</nz-form-label>
+          <nz-form-label [nzSpan]="6">设备所属公司</nz-form-label>
           <nz-form-control>
             <input [disabled]="true" nz-input name="belongingCompany" [(ngModel)]="robot.belongingCompany.name" />
           </nz-form-control>
@@ -81,7 +81,7 @@
 
       <div nz-row>
         <nz-form-item>
-          <nz-form-label [nzSpan]="6">机器人名称</nz-form-label>
+          <nz-form-label [nzSpan]="6">设备名称</nz-form-label>
           <nz-form-control>
             <input [disabled]="true" nz-input name="name" [(ngModel)]="robot.name" />
           </nz-form-control>

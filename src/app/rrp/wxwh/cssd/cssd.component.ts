@@ -99,7 +99,7 @@ export class CssdComponent implements OnInit {
       });
     } else {
       // data为查询组件所选值
-      console.log(data);
+
       // 初始化 传参jsondata
       this.jsondata = {
         province: '',

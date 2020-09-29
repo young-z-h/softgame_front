@@ -90,8 +90,8 @@ export class MtgsComponent implements OnInit {
           title: {
             text: this.selectedRobot !== undefined ? '' : '模台总数',
             style: {
-                shadow: true,
-                color: '#b1b1b1'
+              shadow: true,
+              color: '#b1b1b1'
             },
           },
           xAxis: {
@@ -113,7 +113,7 @@ export class MtgsComponent implements OnInit {
             },
             labels: {
               style: {
-                 color: '#b1b1b1'
+                color: '#b1b1b1'
               },
             },
           },

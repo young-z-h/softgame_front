@@ -1,10 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, Input,HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {QuerylistService} from './querylist.service';
 // @ts-ignore
 import j from 'src/assets/json/city.json';
 import { formatDate } from '@angular/common';
-import { Observable } from 'rxjs';
-import {Company, Province, City, Robot} from "../../core/entity/entity";
+import {Company, Province, City, Robot} from '../../core/entity/entity';
 @Component({
   selector: 'app-querylist',
   templateUrl: './querylist.component.html',
@@ -34,7 +33,7 @@ export class QuerylistComponent implements OnInit {
   enddate;
   ngOnInit() {
     this.company = JSON.parse(localStorage.getItem('userinfo')).company;
-    // 非骊久
+    // 非
     if (this.company.id != 1) {
       // 购买 或 租用 企业
       if (this.company.companyType.id === 3 || this.company.companyType.id === 4 ) {
@@ -49,7 +48,7 @@ export class QuerylistComponent implements OnInit {
         });
       }
     } else {
-      // 骊久
+      //
       this.querylistService.getProvince().then((res:any) => {
         this.ProvinceData = res.data;
         if(this.cache) {
@@ -105,7 +104,7 @@ export class QuerylistComponent implements OnInit {
           });
         }
       } else {
-        // 购买或租用企业 只能看自己企业下的机器人
+        // 购买或租用企业 只能看自己企业下的设备
         this.querylistService.getRobotByCompanyid(id).then((res:any) => {
           this.RobotData = res.data;
         });
@@ -142,7 +141,7 @@ export class QuerylistComponent implements OnInit {
     })
   }
   cityChange(value){
-    // 骊久
+    //
     if (this.company.id==1) {
       this.querylistService.getCompany().then((res: any) => {
         this.CompanyData = res.data.filter(t => t.city === value['name'] && t.province === this.selectedProvince.name);
@@ -187,7 +186,7 @@ export class QuerylistComponent implements OnInit {
     }
   }
   sayHello(){
-    console.log('hello')
+    //console.log('hello')
   }
   reset(){
     this.selectedProvince = undefined;

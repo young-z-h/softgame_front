@@ -50,7 +50,7 @@
     <td>
 
 
-      <button nz-button [nzType]="'primary'" (click)="showModa2(data)"><span>所属机器人</span></button>
+      <button nz-button [nzType]="'primary'" (click)="showModa2(data)"><span>所属设备</span></button>
 
 
 
@@ -86,11 +86,11 @@
   <label>联系人:&nbsp;</label> <input nz-input *ngIf="company" [(ngModel)]="this.company.legalPerson" />
   <label>联系人电话:&nbsp;</label> <input nz-input *ngIf="company" [(ngModel)]="this.company.phone" />
 </nz-modal>
-<nz-modal [(nzVisible)]="isVisible2" nzTitle="所属机器人" (nzOnCancel)="handleCancel2()" (nzAfterOpen)="getRobotsByBelongingComapnyId(this.company.id)" (nzOnOk)="handleCancel2()">
+<nz-modal [(nzVisible)]="isVisible2" nzTitle="所属设备" (nzOnCancel)="handleCancel2()" (nzAfterOpen)="getRobotsByBelongingComapnyId(this.company.id)" (nzOnOk)="handleCancel2()">
   <table>
     <tr>
       <th>序号</th>
-      <th>布料机器名称</th>
+      <th>机器名称</th>
       <th>唯一标识</th>
       <th>使用状态</th>
       <th>操作</th>
@@ -111,12 +111,12 @@
 
 
 
-<nz-modal [(nzVisible)]="isVisible3" nzTitle="机器人租赁" (nzOnCancel)="handleCancel3()" (nzOnOk)="zulin()" (nzAfterOpen)="getRobotsByBelongingComapnyId(this.company.id)"
+<nz-modal [(nzVisible)]="isVisible3" nzTitle="设备租赁" (nzOnCancel)="handleCancel3()" (nzOnOk)="zulin()" (nzAfterOpen)="getRobotsByBelongingComapnyId(this.company.id)"
           [nzFooter]="modalFooter" >
   <form nz-form *ngIf="add1" id="form1">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">选择机器人</nz-form-label>
+        <nz-form-label [nzSpan]="6">选择设备</nz-form-label>
         <nz-form-control>
           <nz-select name="robot" [(ngModel)]="robot" >
             <nz-option *ngFor="let obj of robots" [nzValue]="obj" [nzLabel]="obj.name"></nz-option>

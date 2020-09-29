@@ -3,7 +3,7 @@
   <thead>
   <tr>
     <th>序号</th>
-    <th>布料机器人名称</th>
+    <th>设备名称</th>
     <th>唯一标识</th>
     <th>租赁企业</th>
     <th>审批请求</th>
@@ -31,7 +31,7 @@
   <form nz-form *ngIf="isVisible">
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人所属企业</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备所属企业</nz-form-label>
         <nz-form-control>
           <input [disabled]="true" nz-input name="company" [(ngModel)]="approval.robot.belongingCompany.name" />
         </nz-form-control>
@@ -39,7 +39,7 @@
     </div>
     <div nz-row>
       <nz-form-item>
-        <nz-form-label [nzSpan]="6">机器人名称</nz-form-label>
+        <nz-form-label [nzSpan]="6">设备名称</nz-form-label>
         <nz-form-control>
           <input [disabled]="true" nz-input name="robotname" [(ngModel)]="approval.robot.name" />
         </nz-form-control>

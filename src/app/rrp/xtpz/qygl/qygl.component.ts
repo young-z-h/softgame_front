@@ -148,7 +148,7 @@ export class QyglComponent implements OnInit {
     this.add2 = !this.add2;
   }
   zulin(): void {
-    console.log(this.robots);
+    (this.robots);
     this.isVisible2 = false;
     this.add1 = false;
     this.add2 = false;
@@ -233,7 +233,7 @@ export class QyglComponent implements OnInit {
       });
     } else {
       // data为查询组件所选值
-      console.log(data);
+
       // 初始化 传参jsondata
       this.jsondata = {
         province: '',

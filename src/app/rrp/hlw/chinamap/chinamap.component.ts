@@ -72,8 +72,8 @@ export class ChinamapComponent implements OnInit {
           this.num  += obj.value;
         }
       }
-      console.log(this.num);
-      this.header = '各省地图|布料机器人分布';
+      //console.log(this.num);
+      this.header = '各省地图|设备分布';
       this.chinaOptions = {
         tooltip: {
           trigger: 'item',
@@ -152,7 +152,7 @@ export class ChinamapComponent implements OnInit {
                 }
               ]
             };
-            this.header = obj.name + '|布料机器人分布';
+            this.header = obj.name + '|设备分布';
             this.data = this.CityData.filter(t => t.provinceid === this.selectProvinceData.provinceid);
             for (let obj of this.data) {
               if (obj.value > 0) {
@@ -161,7 +161,7 @@ export class ChinamapComponent implements OnInit {
             }
           }
           if (obj.name.includes('市') || obj.name.includes('州') || obj.name.includes('区')) {
-            console.log(obj.data)
+            //console.log(obj.data)
             this.getLease(obj.data.name);
           }
         }
@@ -173,7 +173,7 @@ export class ChinamapComponent implements OnInit {
       this.num = 0;
       this.data = res.data;
       this.regionOptions = this.chinaOptions;
-      this.header = '各省地图|布料机器人分布';
+      this.header = '各省地图|设备分布';
       this.cityCompany = undefined;
       for (const obj of res.data) {
         if (obj.value > 0) {
@@ -186,7 +186,7 @@ export class ChinamapComponent implements OnInit {
   getLease(data) {
     this.querylisthelp.getLeaseByCity(data).then((res:any)=>{
       this.cityCompany = res.data;
-      this.header = data + '|布料机器人分布';
+      this.header = data + '|设备分布';
     })
   }
 

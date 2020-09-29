@@ -77,7 +77,7 @@ export class IndexComponent implements OnInit {
     this.http.get(this.posturl.hostname + '/dynamicMenuService/getDynamicMenu?id=' + userId).subscribe((res: any) => {
       if (res.state === 200) {
         this.digoutMenu(res.data);
-        // console.log(this.menus);
+        // //console.log(this.menus);
       } else {
         this.message.error('菜单加载失败');
       }
@@ -130,7 +130,7 @@ export class IndexComponent implements OnInit {
         obj.icon = 'setting';
       }
     }
-    console.log(this.menus);
+    //console.log(this.menus);
   }
   navigateTo(data: any) {
     if (data.url) {
@@ -182,7 +182,7 @@ export class IndexComponent implements OnInit {
     if (newPassword1.value === newPassword2.value) {
       const userToChangePassword = JSON.parse(localStorage.getItem('userinfo'));
       userToChangePassword.password = newPassword1.value;
-      console.log(userToChangePassword);
+      //console.log(userToChangePassword);
       this.yhglService.updateUser(userToChangePassword)
         .subscribe((res: any) => {
           if (res.state === 200) { this.message.success(res.msg); } else { this.message.error(res.msg); }

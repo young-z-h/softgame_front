@@ -119,7 +119,7 @@ export class BljqrglComponent implements OnInit {
     alert(data.way === '租赁');
   }
   zulin(): void {
-    console.log(this.robots);
+    //console.log(this.robots);
     this.isVisible2 = false;
     this.add1 = false;
     this.add2 = false;
@@ -201,7 +201,7 @@ export class BljqrglComponent implements OnInit {
       });
     } else {
       // data为查询组件所选值
-      console.log(data);
+
       // 初始化 传参jsondata
       this.jsondata = {
         province: '',

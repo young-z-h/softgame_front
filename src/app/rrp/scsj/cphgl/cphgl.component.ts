@@ -81,7 +81,7 @@ export class CphglComponent implements OnInit {
           xAxis: {
             categories: time,
             crosshair: true,
-              },
+          },
           yAxis: {
             min: 0,
             title: {
@@ -100,7 +100,7 @@ export class CphglComponent implements OnInit {
             shared: true,
             useHTML: true,
             style: {
-                 shadow: true,
+              shadow: true,
             },
           },
           plotOptions: {
